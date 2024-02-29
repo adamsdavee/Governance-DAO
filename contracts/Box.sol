@@ -1,9 +1,13 @@
-// SPDX-License-Identifier: MIT
+//SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.7;
 
-contract Box {
-    uint256 internal value;
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+contract Box is Ownable {
+    constructor() Ownable(msg.sender) {}
+
+    uint256 private value;
 
     event ValueChanged(uint256 newValue);
 
@@ -14,9 +18,5 @@ contract Box {
 
     function retrieve() public view returns (uint256) {
         return value;
-    }
-
-    function version() public pure returns (uint256) {
-        return 1;
     }
 }

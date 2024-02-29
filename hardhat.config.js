@@ -7,6 +7,7 @@ require("hardhat-deploy");
 
 const TELOS_RPC_URL = process.env.TELOS_RPC_URL;
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
+// const HARDHAT_KEY = process.env.HARDHAT_KEY;
 
 module.exports = {
   defaultNetwork: "hardhat",
@@ -25,6 +26,7 @@ module.exports = {
     localhost: {
       url: "http://127.0.0.1:8545/",
       chainId: 31337,
+      // accounts: [HARDHAT_KEY],
     },
   },
 
